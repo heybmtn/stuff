@@ -73,7 +73,7 @@
   /* ── IMAGE GRID ── */
   .image-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 3px;
     margin-top: 40px;
     animation: up 0.7s ease 0.1s both;
@@ -83,6 +83,23 @@
     aspect-ratio: 3 / 4;
     overflow: hidden;
     position: relative;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    padding: 10px 0 0;
+  }
+
+  @media (max-width: 680px) {
+    .product-title { font-size: 12px; }
   }
 
   /* Six distinct warm tones to suggest varied objects */
@@ -244,15 +261,26 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .header-tag { display: none; }
+    header {
+      padding-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+    }
     .logo { font-size: 16px; }
     .nav-contact { font-size: 13px; }
-
-    .image-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3px;
-      margin-top: 24px;
+    .header-tag {
+      display: block;
+      width: 100%;
+      order: 3;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+      border-top: 0.5px solid rgba(26,24,20,0.15);
+      margin-top: 4px;
     }
+    .header-mobile-tag { display: none; }
+
+    .image-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 24px; }
 
     .coming-block {
       flex-direction: column;
@@ -287,19 +315,17 @@
 <header>
   <div class="logo">stuff<em>.</em>london</div>
   <div class="header-tag">Vintage · Antiques · Art · Stuff</div>
-  <a href="/cdn-cgi/l/email-protection#7c14191010133c0f08091a1a52101312181312" class="nav-contact"><span class="__cf_email__" data-cfemail="167e737a7a79566562637070387a7978727978">[email&#160;protected]</span></a>
+  <a href="mailto:hello@stuff.london" class="nav-contact">hello@stuff.london</a>
 </header>
 
 <!-- IMAGE GRID -->
 <div class="image-grid">
-  <div class="ph ph-1"></div>
-  <div class="ph ph-2"></div>
-  <div class="ph ph-3"></div>
-  <div class="ph ph-4"></div>
-  <div class="ph ph-5"></div>
-  <div class="ph ph-6"></div>
-  <div class="ph ph-1"></div>
-  <div class="ph ph-3"></div>
+  <div class="product"><div class="ph ph-1"></div><p class="product-title">Stuff 01</p></div>
+  <div class="product"><div class="ph ph-2"></div><p class="product-title">Stuff 02</p></div>
+  <div class="product"><div class="ph ph-3"></div><p class="product-title">Stuff 03</p></div>
+  <div class="product"><div class="ph ph-4"></div><p class="product-title">Stuff 04</p></div>
+  <div class="product"><div class="ph ph-5"></div><p class="product-title">Stuff 05</p></div>
+  <div class="product"><div class="ph ph-6"></div><p class="product-title">Stuff 06</p></div>
 </div>
 
 <!-- COMING SOON + SIGNUP -->
@@ -324,7 +350,7 @@
 <footer>
   <div class="footer-left">Online & Popup Shops &nbsp;·&nbsp; © 2025 stuff.london</div>
   <div class="footer-right">
-    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <a href="https://instagram.com/stuff.london" target="_blank">Instagram</a>
   </div>
 </footer>
 
